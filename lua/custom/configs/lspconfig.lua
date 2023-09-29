@@ -25,7 +25,7 @@ lspconfig.rust_analyzer.setup {
       cargo = {
         allFeatures = true,
       },
-   },
+    },
   },
 }
 
@@ -41,6 +41,22 @@ lspconfig.gopls.setup {
       },
       staticcheck = true,
       gofumpt = true,
+    },
+  },
+}
+
+lspconfig.solargraph.setup {
+  cmd = { "solargraph", "stdio" },
+  root_dir = util.root_pattern("Gemfile", ".git", "."),
+  settings = {
+    solargraph = {
+      autoformat = true,
+      completion = true,
+      diagnostic = true,
+      folding = true,
+      references = true,
+      rename = true,
+      symbols = true,
     },
   },
 }
