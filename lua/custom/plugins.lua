@@ -1,4 +1,4 @@
-local overrides = require("custom.configs.overrides")
+local overrides = require "custom.configs.overrides"
 
 ---@type NvPluginSpec[]
 local plugins = {
@@ -20,21 +20,15 @@ local plugins = {
       require "plugins.configs.lspconfig"
       require "custom.configs.lspconfig"
     end, -- Override to setup mason-lspconfig
-  },
-
-  {
-    -- Ref: https://youtu.be/mh_EJhH49Ms?si=DRY-MGoP75JUWfCz&t=273
-    "rust-lang/rust.vim",
-    ft = 'rust',
-    init = function()
-      vim.g.rustfmt_autosave =1
-end
+    opts = {
+      autoformat = true,
+    },
   },
 
   -- override plugin configs
   {
     "williamboman/mason.nvim",
-    opts = overrides.mason
+    opts = overrides.mason,
   },
 
   {
@@ -57,12 +51,12 @@ end
   },
 
   {
-    'phaazon/hop.nvim',
+    "phaazon/hop.nvim",
     branch = "v2", -- optional but strongly recommended
-   -- cmd = function()
-   --   -- you can configure Hop the way you like here; see :h hop-config
-   --   require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-   -- end,
+    -- cmd = function()
+    --   -- you can configure Hop the way you like here; see :h hop-config
+    --   require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+    -- end,
     -- opts will be merged with the parent spec
     opts = { use_diagnostic_signs = true },
   },

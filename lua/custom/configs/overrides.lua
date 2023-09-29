@@ -40,6 +40,9 @@ M.mason = {
 
     -- rust stuff
     "rust-analyzer",
+    -- gopls
+    "gopls",
+    "gofumpt",
   },
 }
 
