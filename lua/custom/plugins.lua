@@ -22,6 +22,15 @@ local plugins = {
     end, -- Override to setup mason-lspconfig
   },
 
+  {
+    -- Ref: https://youtu.be/mh_EJhH49Ms?si=DRY-MGoP75JUWfCz&t=273
+    "rust-lang/rust.vim",
+    ft = 'rust',
+    init = function()
+      vim.g.rustfmt_autosave =1
+end
+  },
+
   -- override plugin configs
   {
     "williamboman/mason.nvim",
