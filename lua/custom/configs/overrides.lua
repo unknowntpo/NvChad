@@ -43,6 +43,13 @@ M.mason = {
     -- gopls
     "gopls",
     "gofumpt",
+
+    -- terraform
+    "terraform-ls",
+
+    "elixir-ls",
+    -- zig
+    "zls",
   },
 }
 
